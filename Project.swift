@@ -23,6 +23,9 @@ let project = Project(
       ),
       sources: ["BillKeeper/Sources/**"],
       resources: ["BillKeeper/Resources/**"],
+      scripts: [
+        BuildScripts.swiftLint
+      ],
       dependencies: [],
       settings: .settings(
         base: [
