@@ -24,7 +24,8 @@ let project = Project(
       sources: ["BillKeeper/Sources/**"],
       resources: ["BillKeeper/Resources/**"],
       scripts: [
-        BuildScripts.swiftLint
+        BuildScripts.swiftLint,
+        BuildScripts.swiftFormat
       ],
       dependencies: [],
       settings: .settings(
@@ -32,7 +33,8 @@ let project = Project(
           "SWIFT_VERSION": "5.0",
           "SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD": "NO",
           "TARGETED_DEVICE_FAMILY": "1",
-          "ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS": "NO"
+          "ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS": "NO",
+          "ENABLE_USER_SCRIPT_SANDBOXING": "NO"
         ]
       )
     ),

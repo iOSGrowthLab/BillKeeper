@@ -1,0 +1,26 @@
+# 들여쓰기 설정
+--indent 2
+--tabwidth 2
+--indentcase true
+--allman false
+
+# 줄바꿈, 공백 관련 설정
+--stripunusedargs closure-only
+--wraparguments after-first
+--wrapcollections before-first
+--trimwhitespace always
+--commas inline
+--semicolons never
+--disable consecutiveBlankLines
+
+# Swift 관련 설정
+--swiftversion 6.1.2
+
+# 불필요한 규칙 비활성화
+--disable redundantReturn
+
+# Tuist 관련 파일 제외
+--exclude Tuist.swift
+--exclude WorkSpace.swift
+--exclude Project.swift
+--exclude Tuist
