@@ -6,3 +6,6 @@ force_unwrapping:
 
 trailing_whitespace:
   ignores_empty_lines: true
+
+disabled_rules:
+  - blanket_disable_command
