@@ -15,9 +15,20 @@ let project = Project(
       destinations: .iOS,
       product: .app,
       bundleId: "com.iOSGrowthLab.BillKeeper",
-      deploymentTargets: .iOS("17.6"),
+      deploymentTargets: .iOS("16.6"),
       infoPlist: .extendingDefault(
         with: [
+          "UIApplicationSceneManifest": [
+            "UIApplicationSupportsMultipleScenes": true,
+            "UISceneConfigurations": [
+              "UIWindowSceneSessionRoleApplication": [
+                [
+                  "UISceneConfigurationName": "Default Configuration",
+                  "UISceneDelegateClassName": "$(PRODUCT_MODULE_NAME).SceneDelegate"
+                ]
+              ]
+            ]
+          ],
           "UILaunchScreen": [:]
         ]
       ),
