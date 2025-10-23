@@ -4,6 +4,7 @@
 //
 //  Created by LCH on 10/23/25.
 //
+// swiftlint:disable line_length
 
 import UIKit
 
