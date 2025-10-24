@@ -29,7 +29,10 @@ let project = Project(
               ]
             ]
           ],
-          "UILaunchScreen": [:]
+          "UILaunchScreen": [:],
+          "UIAppFonts": [
+              "PretendardVariable.ttf"
+          ]
         ]
       ),
       sources: ["BillKeeper/Sources/**"],
