@@ -1,0 +1,436 @@
+{
+  "color": {
+    "brand": {
+      "primary": {
+        "description": "메인 브랜드 색상",
+        "type": "color",
+        "value": "#574a9fff",
+        "blendMode": "normal",
+        "extensions": {
+          "org.lukasoppermann.figmaDesignTokens": {
+            "styleId": "S:946a664eb400e55504d6d6fc559edfbb5a36aea3,",
+            "exportKey": "color"
+          }
+        }
+      },
+      "secondary": {
+        "description": "연한 브랜드 색상 (보조)",
+        "type": "color",
+        "value": "#adacc7ff",
+        "blendMode": "normal",
+        "extensions": {
+          "org.lukasoppermann.figmaDesignTokens": {
+            "styleId": "S:d7fc863d9769bcb967ce8e69e0a88c449c06c22c,",
+            "exportKey": "color"
+          }
+        }
+      }
+    },
+    "surface": {
+      "primary": {
+        "description": "메인 화면의 기본 배경색",
+        "type": "color",
+        "value": "#fafafaff",
+        "blendMode": "normal",
+        "extensions": {
+          "org.lukasoppermann.figmaDesignTokens": {
+            "styleId": "S:d9577de93e7b5c692328dddb1a5a430f1e487ea4,",
+            "exportKey": "color"
+          }
+        }
+      },
+      "secondary": {
+        "description": "모달이나 보조 컨텐츠 영역의 배경색",
+        "type": "color",
+        "value": "#f4f4f4ff",
+        "blendMode": "normal",
+        "extensions": {
+          "org.lukasoppermann.figmaDesignTokens": {
+            "styleId": "S:022e3ab4f107351ea40120ff68f1aec47f52de7f,",
+            "exportKey": "color"
+          }
+        }
+      },
+      "info light": {
+        "description": "일반 정보 아이콘의 연한 배경색",
+        "type": "color",
+        "value": "#eff6ffff",
+        "blendMode": "normal",
+        "extensions": {
+          "org.lukasoppermann.figmaDesignTokens": {
+            "styleId": "S:bec3ad1e0856d03d186b1c79c1087f0bc8dc6d4a,",
+            "exportKey": "color"
+          }
+        }
+      },
+      "danger light": {
+        "description": "위험/경고 정보 아이콘의 연한 배경색",
+        "type": "color",
+        "value": "#fef2f2ff",
+        "blendMode": "normal",
+        "extensions": {
+          "org.lukasoppermann.figmaDesignTokens": {
+            "styleId": "S:fdaa4d22f544930888de5ec01c3b904bb1048be6,",
+            "exportKey": "color"
+          }
+        }
+      }
+    },
+    "neutral": {
+      "white": {
+        "description": "순수한 흰색 (배경, 본문 등)",
+        "type": "color",
+        "value": "#ffffffff",
+        "blendMode": "normal",
+        "extensions": {
+          "org.lukasoppermann.figmaDesignTokens": {
+            "styleId": "S:dda9725345e55b5cf64c65592fd1f5ad165ed5bb,",
+            "exportKey": "color"
+          }
+        }
+      },
+      "level200": {
+        "description": "아주 연한 구분선, Placeholder 텍스트",
+        "type": "color",
+        "value": "#c4c4c4ff",
+        "blendMode": "normal",
+        "extensions": {
+          "org.lukasoppermann.figmaDesignTokens": {
+            "styleId": "S:962cd681b9409ec6a396ddfd9381d7b0277f0805,",
+            "exportKey": "color"
+          }
+        }
+      },
+      "level300": {
+        "description": "안내성 텍스트, 메뉴 설명",
+        "type": "color",
+        "value": "#99a1afff",
+        "blendMode": "normal",
+        "extensions": {
+          "org.lukasoppermann.figmaDesignTokens": {
+            "styleId": "S:497567b18c0e80824a5d1be42d36025b5575358b,",
+            "exportKey": "color"
+          }
+        }
+      },
+      "level400": {
+        "description": "비활성 상태, 약한 보조 아이콘",
+        "type": "color",
+        "value": "#999999ff",
+        "blendMode": "normal",
+        "extensions": {
+          "org.lukasoppermann.figmaDesignTokens": {
+            "styleId": "S:e8dbc6b6d7291e39aedbc87dc5ab56c35322ba34,",
+            "exportKey": "color"
+          }
+        }
+      },
+      "level600": {
+        "description": "보조 정보 텍스트",
+        "type": "color",
+        "value": "#757575ff",
+        "blendMode": "normal",
+        "extensions": {
+          "org.lukasoppermann.figmaDesignTokens": {
+            "styleId": "S:9972b54f385eef649f06a43a808a48513dc67a4c,",
+            "exportKey": "color"
+          }
+        }
+      },
+      "level800": {
+        "description": "중간 중요도 텍스트",
+        "type": "color",
+        "value": "#364153ff",
+        "blendMode": "normal",
+        "extensions": {
+          "org.lukasoppermann.figmaDesignTokens": {
+            "styleId": "S:2edcb09a9a387f74d5e415bc419c07e8afd6ad07,",
+            "exportKey": "color"
+          }
+        }
+      },
+      "black": {
+        "description": "순수한 검정색(기본 텍스트)",
+        "type": "color",
+        "value": "#000000ff",
+        "blendMode": "normal",
+        "extensions": {
+          "org.lukasoppermann.figmaDesignTokens": {
+            "styleId": "S:cff2e6aa8f3fb14bc6da7078cc91fee2d710426c,",
+            "exportKey": "color"
+          }
+        }
+      }
+    },
+    "status": {
+      "interactive": {
+        "description": "활성/강조/주요 상호작용",
+        "type": "color",
+        "value": "#2b7fffff",
+        "blendMode": "normal",
+        "extensions": {
+          "org.lukasoppermann.figmaDesignTokens": {
+            "styleId": "S:237e6e3dbd4a38a363885976887cb4eaa02448b1,",
+            "exportKey": "color"
+          }
+        }
+      },
+      "cancel": {
+        "description": "쥐소/약한 경고",
+        "type": "color",
+        "value": "#f44366ff",
+        "blendMode": "normal",
+        "extensions": {
+          "org.lukasoppermann.figmaDesignTokens": {
+            "styleId": "S:9dfe1433a7aa9bf2ef818ce4774b408fd9458aca,",
+            "exportKey": "color"
+          }
+        }
+      },
+      "income": {
+        "description": "수입, 긍정적 상태, 활성 상태",
+        "type": "color",
+        "value": "#0090ffff",
+        "blendMode": "normal",
+        "extensions": {
+          "org.lukasoppermann.figmaDesignTokens": {
+            "styleId": "S:4505c7a6a75d8307c5c7ecf348f0fd0d6c5c5115,",
+            "exportKey": "color"
+          }
+        }
+      },
+      "expense": {
+        "description": "지출, 위험 상태",
+        "type": "color",
+        "value": "#ff0000ff",
+        "blendMode": "normal",
+        "extensions": {
+          "org.lukasoppermann.figmaDesignTokens": {
+            "styleId": "S:38fb8bb4da58fc28de946d3a0f5ef1c31b1671cf,",
+            "exportKey": "color"
+          }
+        }
+      },
+      "info": {
+        "description": "정보 강조 아이콘 색상",
+        "type": "color",
+        "value": "#155dfcff",
+        "blendMode": "normal",
+        "extensions": {
+          "org.lukasoppermann.figmaDesignTokens": {
+            "styleId": "S:a2550dd912cb13b2e4f9d45468c61b6bf4c595d9,",
+            "exportKey": "color"
+          }
+        }
+      },
+      "danger": {
+        "description": "경고/오류 아이콘 색상",
+        "type": "color",
+        "value": "#e7000bff",
+        "blendMode": "normal",
+        "extensions": {
+          "org.lukasoppermann.figmaDesignTokens": {
+            "styleId": "S:8c5adb54959ce5181f0fc1fec56a4e2bf7397efa,",
+            "exportKey": "color"
+          }
+        }
+      }
+    },
+    "category": {
+      "pink magenta": {
+        "description": "",
+        "type": "color",
+        "value": "#fe0c88ff",
+        "blendMode": "normal",
+        "extensions": {
+          "org.lukasoppermann.figmaDesignTokens": {
+            "styleId": "S:30a3ab80aaad29baf588a29bd566399409309823,",
+            "exportKey": "color"
+          }
+        }
+      },
+      "bright red": {
+        "description": "",
+        "type": "color",
+        "value": "#fb2c36ff",
+        "blendMode": "normal",
+        "extensions": {
+          "org.lukasoppermann.figmaDesignTokens": {
+            "styleId": "S:629aa447942119bb7f7fe532b48ad37f2f0c269c,",
+            "exportKey": "color"
+          }
+        }
+      },
+      "vivid orange": {
+        "description": "",
+        "type": "color",
+        "value": "#fd7304ff",
+        "blendMode": "normal",
+        "extensions": {
+          "org.lukasoppermann.figmaDesignTokens": {
+            "styleId": "S:4b1b06c9858537dbf5502cb26fc03bdf88b66814,",
+            "exportKey": "color"
+          }
+        }
+      },
+      "vivid amber": {
+        "description": "",
+        "type": "color",
+        "value": "#e17100ff",
+        "blendMode": "normal",
+        "extensions": {
+          "org.lukasoppermann.figmaDesignTokens": {
+            "styleId": "S:aed608802484d60035bd1cdab384c2f424dd5a05,",
+            "exportKey": "color"
+          }
+        }
+      },
+      "amber glow": {
+        "description": "",
+        "type": "color",
+        "value": "#fea80eff",
+        "blendMode": "normal",
+        "extensions": {
+          "org.lukasoppermann.figmaDesignTokens": {
+            "styleId": "S:aec96ec5d9500b0eadc42adc49935ea3d9da054e,",
+            "exportKey": "color"
+          }
+        }
+      },
+      "sunny yellow": {
+        "description": "",
+        "type": "color",
+        "value": "#fad410ff",
+        "blendMode": "normal",
+        "extensions": {
+          "org.lukasoppermann.figmaDesignTokens": {
+            "styleId": "S:70fdc9822ef02572d972b28fb692ca525b271caa,",
+            "exportKey": "color"
+          }
+        }
+      },
+      "bright green": {
+        "description": "",
+        "type": "color",
+        "value": "#00c950ff",
+        "blendMode": "normal",
+        "extensions": {
+          "org.lukasoppermann.figmaDesignTokens": {
+            "styleId": "S:84066ccdccb0731320141ed5a199179891655506,",
+            "exportKey": "color"
+          }
+        }
+      },
+      "charcoal gray": {
+        "description": "",
+        "type": "color",
+        "value": "#4a5565ff",
+        "blendMode": "normal",
+        "extensions": {
+          "org.lukasoppermann.figmaDesignTokens": {
+            "styleId": "S:a222405ea961fc0b75cbe6ef546e98b78212b0ec,",
+            "exportKey": "color"
+          }
+        }
+      },
+      "electric sky": {
+        "description": "",
+        "type": "color",
+        "value": "#05d6fbff",
+        "blendMode": "normal",
+        "extensions": {
+          "org.lukasoppermann.figmaDesignTokens": {
+            "styleId": "S:32ff49c8287dc0793b4c7ec0fee907d4fa7aaf46,",
+            "exportKey": "color"
+          }
+        }
+      },
+      "azure beam": {
+        "description": "",
+        "type": "color",
+        "value": "#11affeff",
+        "blendMode": "normal",
+        "extensions": {
+          "org.lukasoppermann.figmaDesignTokens": {
+            "styleId": "S:c2845ecdec69b6498a45359437cafe80692b0c8c,",
+            "exportKey": "color"
+          }
+        }
+      },
+      "deep blue": {
+        "description": "",
+        "type": "color",
+        "value": "#013cfbff",
+        "blendMode": "normal",
+        "extensions": {
+          "org.lukasoppermann.figmaDesignTokens": {
+            "styleId": "S:d3fac0934f49b808d43d1b95d94b0b23832156b7,",
+            "exportKey": "color"
+          }
+        }
+      },
+      "vivid violet": {
+        "description": "",
+        "type": "color",
+        "value": "#ad46ffff",
+        "blendMode": "normal",
+        "extensions": {
+          "org.lukasoppermann.figmaDesignTokens": {
+            "styleId": "S:9f99b2869b1851741731b88213e3ba0ab8b7f45a,",
+            "exportKey": "color"
+          }
+        }
+      },
+      "bright purple": {
+        "description": "",
+        "type": "color",
+        "value": "#bc13ffff",
+        "blendMode": "normal",
+        "extensions": {
+          "org.lukasoppermann.figmaDesignTokens": {
+            "styleId": "S:3a787d81972797f9336805d69c33980cc9a98d16,",
+            "exportKey": "color"
+          }
+        }
+      },
+      "hot fuchsia": {
+        "description": "",
+        "type": "color",
+        "value": "#ff05ddff",
+        "blendMode": "normal",
+        "extensions": {
+          "org.lukasoppermann.figmaDesignTokens": {
+            "styleId": "S:b4a17790e183fb46a113b119f3afb0add09879df,",
+            "exportKey": "color"
+          }
+        }
+      }
+    },
+    "opacity": {
+      "black30": {
+        "description": "검정색 30% 투명도",
+        "type": "color",
+        "value": "#0000004d",
+        "blendMode": "normal",
+        "extensions": {
+          "org.lukasoppermann.figmaDesignTokens": {
+            "styleId": "S:3457814eea3e38d7a52c116a2342f8bfbdb424a2,",
+            "exportKey": "color"
+          }
+        }
+      },
+      "white75": {
+        "description": "흰색 75% 투명도",
+        "type": "color",
+        "value": "#ffffffbf",
+        "blendMode": "normal",
+        "extensions": {
+          "org.lukasoppermann.figmaDesignTokens": {
+            "styleId": "S:d5428594b24497e245d935e5f4b3f9af6a46c0f1,",
+            "exportKey": "color"
+          }
+        }
+      }
+    }
+  }
+}
