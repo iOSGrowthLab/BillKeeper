@@ -38,6 +38,7 @@ let project = Project(
       sources: ["BillKeeper/Sources/**"],
       resources: ["BillKeeper/Resources/**"],
       scripts: [
+        BuildScripts.convertColorTokens,
         BuildScripts.swiftLint,
         BuildScripts.swiftFormat
       ],
