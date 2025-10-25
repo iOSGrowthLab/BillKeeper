@@ -12,3 +12,4 @@ trailing_whitespace:
 
 disabled_rules:
   - blanket_disable_command
+  - switch_case_alignment
