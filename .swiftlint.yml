@@ -1,3 +1,6 @@
+excluded:
+  - Tools
+
 opt_in_rules:
   - force_unwrapping
 
@@ -9,3 +12,4 @@ trailing_whitespace:
 
 disabled_rules:
   - blanket_disable_command
+  - switch_case_alignment

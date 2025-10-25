@@ -8,7 +8,7 @@
 --stripunusedargs closure-only
 --wraparguments after-first
 --wrapcollections before-first
---trimwhitespace always
+--trimwhitespace nonblank-lines
 --commas inline
 --semicolons never
 --disable consecutiveBlankLines
@@ -24,3 +24,4 @@
 --exclude WorkSpace.swift
 --exclude Project.swift
 --exclude Tuist
+--exclude Tools

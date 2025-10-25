@@ -23,4 +23,14 @@ public enum BuildScripts {
     name: "SwiftFormat",
     basedOnDependencyAnalysis: false
   )
+  public static let convertColorTokens = TargetScript.pre(
+    script: """
+    env SDKROOT=$(xcrun --sdk macosx --show-sdk-path) \
+    swift run --package-path Tools/ConvertColorTokens ConvertColorTokens \
+    ${SRCROOT}/Tools/color-tokens.json \
+    ${SRCROOT}/BillKeeper/Sources/Shared/Constants/ColorTokens.swift || true
+    """,
+    name: "ConvertColorTokens",
+    basedOnDependencyAnalysis: false
+  )
 }
