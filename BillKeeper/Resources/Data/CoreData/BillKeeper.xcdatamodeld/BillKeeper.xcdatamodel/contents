@@ -4,11 +4,15 @@
         <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="isDefault" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="name" attributeType="String"/>
+        <relationship name="recurringData" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RecurringData" inverseName="category" inverseEntity="RecurringData"/>
+        <relationship name="transactions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Transaction" inverseName="category" inverseEntity="Transaction"/>
     </entity>
     <entity name="PaymentMethod" representedClassName="PaymentMethod" syncable="YES">
         <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="isDefault" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="name" attributeType="String"/>
+        <relationship name="recurringData" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RecurringData" inverseName="paymentMethod" inverseEntity="RecurringData"/>
+        <relationship name="transactions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Transaction" inverseName="paymentMethod" inverseEntity="Transaction"/>
     </entity>
     <entity name="RecurringData" representedClassName="RecurringData" syncable="YES">
         <attribute name="amount" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
@@ -18,6 +22,9 @@
         <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="type" attributeType="String"/>
         <attribute name="updatedAt" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="recurringData" inverseEntity="Category"/>
+        <relationship name="paymentMethod" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PaymentMethod" inverseName="recurringData" inverseEntity="PaymentMethod"/>
+        <relationship name="transaction" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Transaction" inverseName="recurringData" inverseEntity="Transaction"/>
     </entity>
     <entity name="Transaction" representedClassName="Transaction" syncable="YES">
         <attribute name="amount" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
@@ -32,5 +39,8 @@
         <attribute name="recurringRule" optional="YES" attributeType="String"/>
         <attribute name="type" attributeType="String"/>
         <attribute name="updatedAt" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="transactions" inverseEntity="Category"/>
+        <relationship name="paymentMethod" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PaymentMethod" inverseName="transactions" inverseEntity="PaymentMethod"/>
+        <relationship name="recurringData" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RecurringData" inverseName="transaction" inverseEntity="RecurringData"/>
     </entity>
 </model>
