@@ -60,7 +60,7 @@ let project = Project(
       bundleId: "com.iOSGrowthLab.BillKeeperTests",
       infoPlist: .default,
       sources: ["BillKeeper/Tests/**"],
-      resources: [],
+      resources: ["BillKeeper/Resources/Data/CoreData/BillKeeper.xcdatamodeld"],
       dependencies: [.target(name: "BillKeeper")]
     )
   ],
