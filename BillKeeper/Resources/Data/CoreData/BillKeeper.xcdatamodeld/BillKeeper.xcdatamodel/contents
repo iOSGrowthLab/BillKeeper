@@ -5,4 +5,9 @@
         <attribute name="isDefault" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="name" attributeType="String"/>
     </entity>
+    <entity name="PaymentMethod" representedClassName="PaymentMethod" syncable="YES">
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="isDefault" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="name" attributeType="String"/>
+    </entity>
 </model>
