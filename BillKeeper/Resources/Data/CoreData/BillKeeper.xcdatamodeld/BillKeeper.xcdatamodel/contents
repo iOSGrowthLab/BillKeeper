@@ -19,4 +19,18 @@
         <attribute name="type" attributeType="String"/>
         <attribute name="updatedAt" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
+    <entity name="Transaction" representedClassName="Transaction" syncable="YES">
+        <attribute name="amount" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="content" attributeType="String"/>
+        <attribute name="createdAt" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="date" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="expiredDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="installmentMonths" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="isInstallment" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="isRecurring" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="recurringRule" optional="YES" attributeType="String"/>
+        <attribute name="type" attributeType="String"/>
+        <attribute name="updatedAt" attributeType="Date" usesScalarValueType="NO"/>
+    </entity>
 </model>
