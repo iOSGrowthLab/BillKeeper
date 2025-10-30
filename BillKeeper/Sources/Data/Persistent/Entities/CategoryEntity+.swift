@@ -9,12 +9,22 @@
 import CoreData
 
 extension CategoryEntity {
+  // MARK: - Fetch Request
+  
   @nonobjc class func fetchRequest() -> NSFetchRequest<CategoryEntity> {
     return NSFetchRequest<CategoryEntity>(entityName: "Category")
   }
-}
-
-extension CategoryEntity {
+  
+  // MARK: - Domain Mapping
+  
+  func toDomain() -> Category {
+    return Category(id: id,
+                    name: name,
+                    isDefault: isDefault)
+  }
+  
+  // MARK: - RecurringData Relationship
+  
   @objc(addRecurringDataObject:)
   @NSManaged func addToRecurringData(_ value: RecurringDataEntity)
   
@@ -26,9 +36,9 @@ extension CategoryEntity {
   
   @objc(removeRecurringData:)
   @NSManaged func removeFromRecurringData(_ values: NSSet)
-}
-
-extension CategoryEntity {
+  
+  // MARK: - Transactions Relationship
+  
   @objc(addTransactionsObject:)
   @NSManaged func addToTransactions(_ value: TransactionEntity)
   
