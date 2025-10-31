@@ -9,12 +9,22 @@
 import CoreData
 
 extension PaymentMethodEntity {
+  // MARK: - Fetch Request
+  
   @nonobjc class func fetchRequest() -> NSFetchRequest<PaymentMethodEntity> {
     return NSFetchRequest<PaymentMethodEntity>(entityName: "PaymentMethod")
   }
-}
-
-extension PaymentMethodEntity {
+  
+  // MARK: - Domain Mapping
+  
+  func toDomain() -> PaymentMethod {
+    return PaymentMethod(id: id,
+                         name: name,
+                         isDefault: isDefault)
+  }
+  
+  // MARK: - RecurringData Relationship
+  
   @objc(addRecurringDataObject:)
   @NSManaged func addToRecurringData(_ value: RecurringDataEntity)
   
@@ -26,9 +36,9 @@ extension PaymentMethodEntity {
   
   @objc(removeRecurringData:)
   @NSManaged func removeFromRecurringData(_ values: NSSet)
-}
-
-extension PaymentMethodEntity {
+  
+  // MARK: - Transactions Relationship
+  
   @objc(addTransactionsObject:)
   @NSManaged func addToTransactions(_ value: TransactionEntity)
   
