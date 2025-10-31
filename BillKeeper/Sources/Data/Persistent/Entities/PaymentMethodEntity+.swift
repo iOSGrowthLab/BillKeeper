@@ -9,7 +9,7 @@
 import CoreData
 
 extension PaymentMethodEntity {
-  // MARK: - FetchRequest
+  // MARK: - Fetch Request
   
   @nonobjc class func fetchRequest() -> NSFetchRequest<PaymentMethodEntity> {
     return NSFetchRequest<PaymentMethodEntity>(entityName: "PaymentMethod")
