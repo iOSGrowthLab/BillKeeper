@@ -24,10 +24,7 @@ final class PaymentMethodRepositoryImpl: PaymentMethodRepository {
   
   func fetch(by id: UUID) async throws -> PaymentMethod? {
     try await context.perform {
-      let request = PaymentMethodEntity.fetchRequest()
-      request.predicate = NSPredicate(format: "id == %@", id as CVarArg)
-      request.fetchLimit = 1
-      let entity = try self.context.fetch(request).first
+      let entity = try self.fetchEntity(by: id)
       return entity?.toDomain()
     }
   }
@@ -44,11 +41,7 @@ final class PaymentMethodRepositoryImpl: PaymentMethodRepository {
   
   func update(_ paymentMethod: PaymentMethod) async throws {
     try await context.perform {
-      let request = PaymentMethodEntity.fetchRequest()
-      request.predicate = NSPredicate(format: "id == %@", paymentMethod.id as CVarArg)
-      request.fetchLimit = 1
-      
-      guard let entity = try self.context.fetch(request).first else {
+      guard let entity = try self.fetchEntity(by: paymentMethod.id) else {
         throw RepositoryError.notFound
       }
       
@@ -60,16 +53,19 @@ final class PaymentMethodRepositoryImpl: PaymentMethodRepository {
   
   func delete(_ id: UUID) async throws {
     try await context.perform {
-      let request = PaymentMethodEntity.fetchRequest()
-      request.predicate = NSPredicate(format: "id == %@", id as CVarArg)
-      request.fetchLimit = 1
-      
-      guard let entity = try self.context.fetch(request).first else {
+      guard let entity = try self.fetchEntity(by: id) else {
         return
       }
       
       self.context.delete(entity)
       try self.context.save()
     }
+  }
+  
+  private func fetchEntity(by id: UUID) throws -> PaymentMethodEntity? {
+    let request = PaymentMethodEntity.fetchRequest()
+    request.predicate = NSPredicate(format: "id == %@", id as CVarArg)
+    request.fetchLimit = 1
+    return try context.fetch(request).first
   }
 }
