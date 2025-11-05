@@ -6,9 +6,9 @@
 
 # 줄바꿈, 공백 관련 설정
 --stripunusedargs closure-only
---wraparguments after-first
+--wraparguments before-first
 --wrapcollections before-first
---trimwhitespace nonblank-lines
+--trimwhitespace always
 --commas inline
 --semicolons never
 --disable consecutiveBlankLines
