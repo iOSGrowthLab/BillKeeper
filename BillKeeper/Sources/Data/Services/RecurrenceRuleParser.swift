@@ -92,7 +92,7 @@ private extension RecurringCase {
       case .biWeekly:
         return 2
       case .quarterly:
-        return 4
+        return 3
       case .semiAnnually:
         return 6
       default:
