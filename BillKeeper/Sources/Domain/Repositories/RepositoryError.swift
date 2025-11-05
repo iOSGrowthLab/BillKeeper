@@ -10,4 +10,6 @@ import Foundation
 enum RepositoryError: Error, Equatable {
   case notFound
   case relatedEntityNotFound(String)
+  case mappingFailed(String)
+  case storageError(String)
 }
