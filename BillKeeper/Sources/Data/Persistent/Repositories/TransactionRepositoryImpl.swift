@@ -37,7 +37,13 @@ final class TransactionRepositoryImpl: TransactionRepository {
       guard let entity = try self.fetchTransactionEntity(by: id) else {
         return nil
       }
-      return try entity.toDomain()
+      do {
+        return try entity.toDomain()
+      } catch let DataError.mappingFailed(message) {
+        throw RepositoryError.mappingFailed(message)
+      } catch {
+        throw RepositoryError.storageError(error.localizedDescription)
+      }
     }
   }
 
