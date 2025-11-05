@@ -9,11 +9,11 @@ import CoreData
 
 final class CategoryRepositoryImpl: CategoryRepository {
   private let context: NSManagedObjectContext
-  
+
   init(context: NSManagedObjectContext) {
     self.context = context
   }
-  
+
   func fetchAll() async throws -> [Category] {
     try await context.perform {
       let request = CategoryEntity.fetchRequest()
@@ -21,14 +21,14 @@ final class CategoryRepositoryImpl: CategoryRepository {
       return entities.map { $0.toDomain() }
     }
   }
-  
+
   func fetch(by id: UUID) async throws -> Category? {
     try await context.perform {
       let entity = try self.fetchEntity(by: id)
       return entity?.toDomain()
     }
   }
-  
+
   func save(_ category: Category) async throws {
     try await context.perform {
       let entity = CategoryEntity(context: self.context)
@@ -38,30 +38,30 @@ final class CategoryRepositoryImpl: CategoryRepository {
       try self.context.save()
     }
   }
-  
+
   func update(_ category: Category) async throws {
     try await context.perform {
       guard let entity = try self.fetchEntity(by: category.id) else {
         throw RepositoryError.notFound
       }
-      
+
       entity.name = category.name
       entity.isDefault = category.isDefault
       try self.context.save()
     }
   }
-  
+
   func delete(_ id: UUID) async throws {
     try await context.perform {
       guard let entity = try self.fetchEntity(by: id) else {
         return
       }
-      
+
       self.context.delete(entity)
       try self.context.save()
     }
   }
-  
+
   private func fetchEntity(by id: UUID) throws -> CategoryEntity? {
     let request = CategoryEntity.fetchRequest()
     request.predicate = NSPredicate(format: "id == %@", id as CVarArg)

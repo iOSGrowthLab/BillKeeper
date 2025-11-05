@@ -13,7 +13,7 @@ enum FontUtility {
     case medium = "PretendardVariable-Medium"
     case regular = "PretendardVariable-Regular"
   }
-  
+
   static func resolveFont(weight: Weight, size: CGFloat) -> UIFont {
     if let font = UIFont(name: weight.rawValue, size: size) {
       return font

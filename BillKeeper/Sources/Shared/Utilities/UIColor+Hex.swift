@@ -13,9 +13,9 @@ extension UIColor {
     hexSanitized = hexSanitized.replacingOccurrences(of: "#", with: "")
     guard [6, 8].contains(hexSanitized.count) else { return nil }
     let hasAlpha = hexSanitized.count == 8
-    
+
     guard let rgba = UInt32(hexSanitized, radix: 16) else { return nil }
-    
+
     let divisor = CGFloat(255)
     let red, green, blue, alpha: CGFloat
     if hasAlpha {
@@ -29,7 +29,7 @@ extension UIColor {
       blue = CGFloat(rgba & 0x0000FF) / divisor
       alpha = CGFloat(1.0)
     }
-    
+
     self.init(red: red, green: green, blue: blue, alpha: alpha)
   }
 }

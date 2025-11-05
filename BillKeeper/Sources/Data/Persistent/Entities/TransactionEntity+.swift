@@ -17,13 +17,13 @@ extension TransactionEntity {
 extension TransactionEntity {
   @objc(addRecurringDataObject:)
   @NSManaged func addToRecurringData(_ value: RecurringDataEntity)
-  
+
   @objc(removeRecurringDataObject:)
   @NSManaged func removeFromRecurringData(_ value: RecurringDataEntity)
-  
+
   @objc(addRecurringData:)
   @NSManaged func addToRecurringData(_ values: NSSet)
-  
+
   @objc(removeRecurringData:)
   @NSManaged func removeFromRecurringData(_ values: NSSet)
 }
