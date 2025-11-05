@@ -59,10 +59,16 @@ final class RecurrenceRuleParser: RecurrenceRuleParserProtocol {
       components.append("INTERVAL=\(interval)")
     }
 
-    if case .monthly = rule {
-      let calendar = Calendar(identifier: .gregorian)
-      let day = calendar.component(.day, from: startDate)
-      components.append("BYMONTHDAY=\(day)")
+    switch rule {
+      case .weekdays, .weekends:
+        guard let daySpec = rule.byDaySpec else { break }
+        components.append("BYDAY=\(daySpec)")
+      case .monthly:
+        let calendar = Calendar(identifier: .gregorian)
+        let day = calendar.component(.day, from: startDate)
+        components.append("BYMONTHDAY=\(day)")
+      default:
+        break
     }
 
     components.append("UNTIL=\(formatter.string(from: endDate))")
