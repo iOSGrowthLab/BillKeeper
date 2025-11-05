@@ -26,7 +26,7 @@ final class TransactionRepositoryImpl: TransactionRepository {
         } catch let DataError.mappingFailed(message) {
           throw RepositoryError.mappingFailed(message)
         } catch {
-          throw RepositoryError.storageError("An expected Error occured during fetchAll - \(error)")
+          throw RepositoryError.storageError("Unexpected Error occurred during fetchAll - \(error)")
         }
       }
     }
@@ -52,7 +52,7 @@ final class TransactionRepositoryImpl: TransactionRepository {
         } catch let DataError.mappingFailed(message) {
           throw RepositoryError.mappingFailed(message)
         } catch {
-          throw RepositoryError.storageError("An expected Error occured during fetchByDateRange - \(error)")
+          throw RepositoryError.storageError("Unexpected Error occurred during fetchByDateRange - \(error)")
         }
       }
     }
