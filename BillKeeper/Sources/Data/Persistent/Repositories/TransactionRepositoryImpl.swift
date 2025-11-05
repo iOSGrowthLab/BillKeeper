@@ -174,11 +174,14 @@ final class TransactionRepositoryImpl: TransactionRepository {
     paymentMethod: PaymentMethodEntity
   ) {
     if transaction.isInstallment, let months = transaction.installmentMonths, months > 1 {
-      let installmentAmount = Int64(Double(transaction.amount) / Double(months))
+      let totalAmount = Int64(transaction.amount)
+      let baseInstallmentAmount = totalAmount / Int64(months)
+      let remainderInstallmentAmount = totalAmount - (baseInstallmentAmount * Int64(months - 1))
+
       for month in 1 ..< months {
         let recurringEntity = RecurringDataEntity(context: context)
         recurringEntity.id = UUID()
-        recurringEntity.amount = installmentAmount
+        recurringEntity.amount = (month == months - 1) ? remainderInstallmentAmount : baseInstallmentAmount
         if let futureDate = Calendar.current.date(byAdding: .month, value: month, to: transaction.date) {
           recurringEntity.date = futureDate
         }
@@ -188,6 +191,7 @@ final class TransactionRepositoryImpl: TransactionRepository {
         recurringEntity.updatedAt = Date()
         recurringEntity.category = category
         recurringEntity.paymentMethod = paymentMethod
+        entity.amount = baseInstallmentAmount
         entity.addToRecurringData(recurringEntity)
       }
     } else if transaction.isRecurring, let rule = transaction.recurringCase {
