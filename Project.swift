@@ -42,7 +42,9 @@ let project = Project(
         BuildScripts.swiftFormat,
         BuildScripts.swiftLint
       ],
-      dependencies: [],
+      dependencies: [
+        .external(name: "RWMRecurrenceRule")
+      ],
       settings: .settings(
         base: [
           "SWIFT_VERSION": "5.0",
