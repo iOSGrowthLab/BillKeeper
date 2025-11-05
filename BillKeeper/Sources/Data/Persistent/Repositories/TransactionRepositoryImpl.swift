@@ -20,14 +20,12 @@ final class TransactionRepositoryImpl: TransactionRepository {
     try await context.perform {
       let request = TransactionEntity.fetchRequest()
       let entities = try self.context.fetch(request)
-      return try entities.reduce(into: [Transaction]()) { partialResult, entity in
-        do {
-          try partialResult.append(entity.toDomain())
-        } catch let DataError.mappingFailed(message) {
-          throw RepositoryError.mappingFailed(message)
-        } catch {
-          throw RepositoryError.storageError("Unexpected Error occurred during fetchAll - \(error)")
-        }
+      do {
+        return try entities.map { try $0.toDomain() }
+      } catch let DataError.mappingFailed(message) {
+        throw RepositoryError.mappingFailed(message)
+      } catch {
+        throw RepositoryError.storageError(error.localizedDescription)
       }
     }
   }
@@ -52,14 +50,12 @@ final class TransactionRepositoryImpl: TransactionRepository {
       let request = TransactionEntity.fetchRequest()
       request.predicate = NSPredicate(format: "date >= %@ AND date < %@", startDate as CVarArg, endDate as CVarArg)
       let entities = try self.context.fetch(request)
-      return try entities.reduce(into: [Transaction]()) { partialResult, entity in
-        do {
-          try partialResult.append(entity.toDomain())
-        } catch let DataError.mappingFailed(message) {
-          throw RepositoryError.mappingFailed(message)
-        } catch {
-          throw RepositoryError.storageError("Unexpected Error occurred during fetchByDateRange - \(error)")
-        }
+      do {
+        return try entities.map { try $0.toDomain() }
+      } catch let DataError.mappingFailed(message) {
+        throw RepositoryError.mappingFailed(message)
+      } catch {
+        throw RepositoryError.storageError(error.localizedDescription)
       }
     }
   }
