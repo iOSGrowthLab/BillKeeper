@@ -99,4 +99,23 @@ class TransactionCell: UICollectionViewCell, ViewConfigurable {
       valueLabel.centerYAnchor.constraint(equalTo: centerYAnchor)
     ])
   }
+
+  // TODO: Reactor binding시 로직 작성 필요
+  func setData(data: TransactionDummy) {
+    categoryImage.image = UIImage(named: data.category.rawValue)
+    categoryImage.backgroundColor = data.category.color
+    categoryLabel.text = data.category.name
+    dateLabel.text = data.date
+    memoLabel.text = data.memo
+    valueLabel.text = data.price
+
+    switch data.type {
+      case .income:
+        valueLabel.textColor = .Status.income
+        valueLabel.text = data.price
+      case .expense:
+        valueLabel.textColor = .Status.expense
+        valueLabel.text = "-\(data.price)"
+    }
+  }
 }
