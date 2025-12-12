@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeView: UIViewController, ViewConfigurable {
+final class HomeView: UIViewController, ViewConfigurable {
   private enum Section: Int, CaseIterable, Hashable {
     case main
   }

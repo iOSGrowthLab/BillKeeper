@@ -10,7 +10,7 @@ import RxCocoa
 import RxSwift
 import UIKit
 
-class SplashView: UIViewController, ViewConfigurable {
+final class SplashView: UIViewController, ViewConfigurable {
   private let imageView: UIImageView = {
     let imageView = UIImageView()
     imageView.image = UIImage(resource: .logo)

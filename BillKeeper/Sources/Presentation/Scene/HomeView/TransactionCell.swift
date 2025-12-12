@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TransactionCell: UICollectionViewCell, ViewConfigurable {
+final class TransactionCell: UICollectionViewCell, ViewConfigurable {
   private let categoryImage: UIImageView = {
     let imageView = UIImageView()
     imageView.contentMode = .scaleAspectFill
